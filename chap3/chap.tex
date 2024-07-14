@@ -1,0 +1,39 @@
+\chapter{导数}
+
+\begin{theorem}{导数} \label{thm:derivative}
+	设函数$f$在点$a$某一领域内有定义,若极限$\lim\limits_{x\rightarrow a}\frac{f\left( x \right) -f\left( a \right)}{x-a}$存在,则称$f$在$a$点处可导,此极限为$f$在点$a$的导数,记为$f'\left( a \right) $.
+\end{theorem}
+
+\begin{example}{}
+(广义Rolle中值定理) 设$f$在$\left( a,b \right) $(有穷区间或者无穷区间)中任意一点有有限导数,且$\lim\limits_{x\rightarrow a+0}f\left( x \right) $ $=\lim\limits_{x\rightarrow b-0}f\left( x \right) $.
+\end{example}
+
+\vspace{7cm}
+
+\begin{theorem}{Leibniz公式} \label{thm:Leibniz_formula}
+	如果函数$u=u\left( x \right)$,$v=v\left( x \right) $都在点$x$处具有$n$阶导数,则函数$u\cdot v=u\left( x \right) \cdot v\left( x \right) $也在点$x$处有$n$阶导数,且有
+	$$
+		\left( uv \right) ^{\left( n \right)}=\sum_{k=0}^n{C_{n}^{k}u^{\left( n-k \right)}v^{\left( k \right)}}
+	$$
+\end{theorem}
+
+\begin{theorem}{Darboux定理} \label{thm:Darboux_theorem}
+	若函数$f(x)$在区间$I$上连续,则它在$I$上导数$f'(x)$具有介值性,即如果$[a,b] \subset I$,$f'(a)< \mu<f'(b)$或$f'(a)> \mu>f'(b)$,存在$\xi \in (a,b)$,使得$f'(\xi)=\mu$.
+\end{theorem}
+
+\begin{proof}
+	只考虑$f'(a)< \mu<f'(b)$的情形，另一情形的证明类似.设$$
+		F\left( x \right) =f\left( x \right) -\mu x
+	$$
+	则$
+		F'\left( x \right) =f'\left( x \right) -\mu
+	$,得$$
+		F'\left( a \right) =f'\left( a \right) -\mu <0,F'\left( b \right) =f'\left( b \right) -\mu >0
+	$$由于函数$F(x)$在$[a,b]$上连续,故$F(x)$在$[a,b]$上存在最小值点$\xi$.若$\xi=a$,则$$
+		\frac{F\left( x \right) -F\left( a \right)}{x-a}\ge 0,F'\left( a \right) =\lim_{x\rightarrow a}\frac{F\left( x \right) -F\left( a \right)}{x-a}\ge 0
+	$$这与$F'(a)<0$矛盾.故$\xi\ne a$.同理可证$\xi\ne b$.因此$\xi \in (a,b)$,即$\xi$是$F(x)$的极小值点,故$F'(\xi)=f'(\xi)-\mu =0$,$f'(\xi)=\mu$.
+\end{proof}
+
+\begin{example}
+(导数无第一类间断点) 设函数$f(x)$在$(a,b)$内\textbf{处处有导数}$f'(x)$.证明:$(a,b)$中的点或者为$f'(x)$的连续点,或者为$f'(x)$的第二类间断点.
+\end{example}

@@ -1,0 +1,64 @@
+\chapter{积分的计算和积分的极限}
+
+\begin{example}
+	(定积分一例七解) 计算$
+		I=\int_0^1{\frac{\ln \left( 1+x \right)}{1+x^2}\text{d}x}
+	$.
+\end{example}
+
+\begin{proof}
+	(方法一) 令$x=tanx$,则
+	$$
+		\int_0^1{\frac{\ln \left( 1+x \right)}{1+x^2}\text{d}x}=\int_0^{\frac{\pi}{4}}{\ln \left( 1+\tan t \right) \text{d}t}=\int_0^{\frac{\pi}{4}}{\ln \left( \sin t+\cos t \right) \text{d}t}-\int_0^{\frac{\pi}{4}}{\ln\cos t\text{d}t}
+	$$
+	$$
+		=\int_0^{\frac{\pi}{4}}{\ln \left[ \sqrt{2}\cos \left( t-\frac{\pi}{4} \right) \right] \text{d}t-\int_0^{\frac{\pi}{4}}{\ln\cos t\text{d}t}}
+	$$
+	$$
+		=\frac{\pi}{8}\ln 2+\int_{-\frac{\pi}{4}}^0{\ln\cos t\text{d}t}-\int_0^{\frac{\pi}{4}}{\ln\cos t\text{d}t}=\frac{\pi}{8}\ln 2
+	$$
+	\begin{remark}
+		最后一步解法用到了偶函数关于原点对称的闭区间上积分的性质.
+	\end{remark}
+	(方法二) 考虑含参积分$
+		I\left( a \right) =\int_0^1{\frac{\ln \left( 1+ax \right)}{1+x^2}\text{d}x}
+	$.\\
+	显然$I(0)=0$,$ I(1)=I$,且函数$
+		\frac{\ln \left( 1+ax \right)}{1+x^2}
+	$及$
+		\frac{\partial}{\partial a}\left( \frac{\ln \left( 1+ax \right)}{1+x^2} \right) =\frac{x}{\left( 1+x^2 \right) \left( 1+ax \right)}
+	$在$R=[0,1]\times [0,1]$上连续,故
+	$$
+		I'\left( a \right) =\int_0^1{\frac{\partial}{\partial a}\left( \frac{\ln \left( 1+ax \right)}{1+x^2} \right) dx}=\int_0^1{\frac{x}{\left( 1+x^2 \right) \left( 1+ax \right)}dx}
+	$$
+	$$
+		=\frac{1}{1+a^2}\int_0^1{\left( \frac{a+x}{1+x^2}-\frac{a}{1+ax} \right) dx}=\frac{1}{1+a^2}\left[ \frac{a\pi}{4}+\frac{1}{2}\ln 2-\ln \left( 1+a \right) \right]
+	$$
+	因此
+	$$
+		I=\int_0^1{I'\left( a \right) \text{d}a=}\int_0^1{\frac{1}{1+a^2}\left[ \frac{a\pi}{4}+\frac{1}{2}\ln 2-\ln \left( 1+a \right) \right] da}=\frac{\pi}{4}\ln 2-I
+	$$
+	得
+	$$
+		I=\frac{\pi}{8}\ln 2
+	$$
+
+	(方法三) 令$
+		x=\frac{1-u}{1+u}
+	$,则$
+		dx=\frac{-2}{\left( 1+u \right) ^2}du
+	$,
+	$$
+		I=2\int_0^1{\frac{\ln \left( 1+\frac{1-u}{1+u} \right)}{1+\left( \frac{1-u}{1+u} \right) ^2}\frac{1}{\left( 1+u \right) ^2}du}=\int_0^1{\frac{\ln 2-\ln \left( 1+u \right)}{1+u^2}du}
+	$$
+	$$
+		=\ln 2\int_0^1{\frac{du}{1+u^2}}-\int_0^1{\frac{\ln \left( 1+u \right)}{1+u^2}du}=\frac{\pi}{4}\ln 2-I
+	$$
+	得
+	$$
+		I=\frac{\pi}{8}\ln 2
+	$$
+	\begin{remark}
+		选取了最常用的三种解法,其他解法暂时不做要求.
+	\end{remark}
+\end{proof}

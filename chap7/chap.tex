@@ -1,0 +1,85 @@
+\chapter{常数K值法}
+
+\begin{definition}{常数K值法}
+	如果一个微分中值式\textbf{满足}:
+	\begin{enumerate}
+		\item 等式一端是只与端点$a,b$及其函数值、导数值有关的常数;另一端只含导函数和函数在区间内某点$($中值点$)$的值,就称它是\textbf{分离的};
+		\item 如果把式中$b$换成$a$时,原式呈\textbf{$0=0$}形式,就称它是\textbf{对称式}.
+	\end{enumerate}
+	对可化为具有$1.2.$\textbf{两个特点}的微分中值公式,即可分离且可对称化的中值公式,我们可以统一按下程序证明:
+	\begin{enumerate}
+		\item 把原式化为\textbf{分离形式},令等式一端的常数等于$K$;
+		\item 再把原式化为\textbf{对称式},把含有中值的导数换位$K$,把$b$换成$x$,再把右端移于左端,把所得的式子记作$F\left( x\right) $,这就是作出的辅助函数;
+		\item 由$K$的取法及$F\left( x\right) $的作法必有$F\left( a\right) =F\left( b\right) $;
+		\item 使用\textbf{Rolle中值定理}于$F\left( x\right) $,便有$\xi \in \left( a,b \right) $,使得$f'\left( \xi \right) =0$.
+	\end{enumerate}
+	若原式中含有二阶导数,可由得$f'\left( \xi \right) =0$解出$K$后,再用一次中值定理.若有更高阶导数,重复即可.
+\end{definition}
+
+\begin{example}
+	设$f\left( x\right) $在区间$\left[ a,b\right] $上连续,在$\left( a,b\right) $内可导.证明:在$\left( a,b\right) $内存在一个$\xi $,使$bf\left( b \right) -af\left( a \right) =\left[ f\left( \xi \right) +\xi f'\left( \xi \right) \right] \left( b-a \right) $.
+\end{example}
+
+\vspace{8cm}
+
+\begin{example}
+	证明:设$f\left( x\right) $在区间$\left[ a,b\right] $上连续,在$\left( a,b\right) $内二次可微,则必存在$\xi \in \left( a,b \right) $,使得$f\left( b \right) -2f\left( \frac{a+b}{2} \right) +f\left( a \right) =\frac{1}{4}\left( b-a \right) ^2f''\left( \xi \right) $.
+\end{example}
+
+\vspace{7cm}
+
+\begin{proposition}
+	若$f\left( x\right) $在区间$\left[ a,b\right] $上连续,在$\left( a,b\right) $内二次可微,则对大于1的任意自然数$n$有$\xi \in \left( a,b \right) $,使
+	$$
+		f\left( b \right) -\frac{n}{n-1}f\left( \frac{a+\left( n-1 \right) b}{n} \right) +\frac{1}{n-1}f\left( a \right) =\frac{\left( b-a \right) ^2}{2n}f''\left( \xi \right)
+	$$
+\end{proposition}
+
+\begin{proof}
+	\begin{enumerate}
+		\item 令
+				$$
+					K=\frac{f\left( b \right) -\frac{n}{n-1}f\left( \frac{a+\left( n-1 \right) b}{n} \right) +\frac{1}{n-1}f\left( a \right)}{\frac{\left( b-a \right) ^2}{2n}}
+				$$
+		\item 作辅助函数
+				$$
+					F\left( x \right) =f\left( x \right) -\frac{n}{n-1}f\left( \frac{a+\left( n-1 \right) x}{n} \right) +\frac{1}{n-1}f\left( a \right) -\frac{\left( x-a \right) ^2}{2n}K
+				$$
+				易知$F\left( a \right) =F\left( b \right) =0$.
+		\item 应用Rolle中值定理知$\xi \in \left( a,b \right) $,使$F'\left( \eta \right) =0$,即
+				$$
+					f'\left( \eta \right) -f'\left( \frac{a+\left( n-1 \right) \eta}{n} \right) +\frac{\eta -a}{n}K=0
+				$$
+				得,
+				$$
+					K=\frac{f'\left( \eta \right) -f'\left( \frac{a+\left( n-1 \right) \eta}{n} \right)}{\frac{\eta -a}{n}}.
+				$$
+		\item 应用Lagrange定理,就知$\xi \in \left\{ \frac{ a+\left( n-1 \right) \eta }{n},\eta \right\} \subset \left( a,b \right) $,使$f''\left( \xi \right) =K$,证毕.
+	\end{enumerate}
+\end{proof}
+
+\begin{proposition}
+	若$f\left( x\right)$,$g\left( x\right) $在区间$\left[ a,b\right] $上连续,在$\left( a,b\right) $内二次可微,并且$g''\left( x \right) \ne 0$,则存在$\xi \in \left( a,b \right) $,使
+	$$
+		\frac{f\left( b \right) -2f\left( \frac{a+b}{2} \right) +f\left( a \right)}{g\left( b \right) -2g\left( \frac{a+b}{2} \right) +g\left( a \right)}=\frac{f''\left( \xi \right)}{g''\left( \xi \right)}
+	$$
+\end{proposition}
+
+\begin{proof}
+	\begin{enumerate}
+		\item 令
+				$$
+					K=\frac{f\left( b \right) -2f\left( \frac{a+b}{2} \right) +f\left( a \right)}{g\left( b \right) -2g\left( \frac{a+b}{2} \right) +g\left( a \right)}
+				$$
+		\item 作辅助函数
+				$$
+					F\left( x \right) =\left[ f\left( x \right) -2f\left( \frac{a+x}{2} \right) +f\left( a \right) \right] -K\left[ g\left( x \right) -2g\left( \frac{a+x}{2} \right) +g\left( a \right) \right]
+				$$
+				易知$F\left( a \right) =F\left( b \right) =0$.
+		\item 应用Rolle中值定理知$\xi \in \left( a,b \right) $,使$F'\left( \eta \right) =0$,即
+				$$
+					K=\frac{f'\left( \eta \right) -f'\left( \frac{a+\eta}{2} \right)}{g'\left( \eta \right) -g'\left( \frac{a+\eta}{2} \right)}
+				$$
+				再应用Cauchy中值定理,便有$\xi \in \left\{ \frac{ a+\left( n-1 \right) \eta }{n},\eta \right\} \subset \left( a,b \right) $便有,$K=\frac{f''\left( \xi \right)}{g''\left( \xi \right)}$,证毕.
+	\end{enumerate}
+\end{proof}

@@ -1,0 +1,74 @@
+\chapter{微分中值定理}
+
+\begin{theorem}{Fermat定理} \label{thm:Fermat_theorem}
+	设函数$f$在$x_0$的某个邻域$U\left( x_0 \right) $有定义,且在$x_0$处可导,若$x_0$是$f$的极值点,即对$\forall x\in  U\left( x_0 \right) $,有$f\left( x \right) \le f\left( x_0 \right) \left( \text{或}f\left( x \right) \ge f\left( x_0 \right) \right) $,\\则$f'\left( x_0 \right) =0$.
+\end{theorem}
+
+\begin{theorem}{Rolle中值定理} \label{thm:Rolle_middle_theorem}
+	若函数$f$满足条件:
+	\begin{enumerate}
+		\item 在闭区间$\left[ a,b \right] $上连续;
+		\item 在开区间$\left( a,b \right) $可导;
+		\item $f\left( a \right) =f\left( b \right) $.
+	\end{enumerate}
+	则至少存在一点$\xi \in \left( a,b \right) $,使$f'\left( \xi \right) = 0 $.
+\end{theorem}
+
+\begin{theorem}{Lagrange中值定理} \label{thm:Lagrange_middle_theorem}
+	若$f$在闭区间$\left[ a,b \right] $上连续,在开区间$\left( a,b \right) $可导,则至少存在一点$\xi \in \left( a,b \right) $,使
+	$$
+		f'\left( \xi \right) =\frac{f\left( b \right) -f\left( a \right)}{b-a}
+	$$
+\end{theorem}
+
+\begin{note}
+	Lagrange中值定理在极限中的参数处理:
+	\begin{enumerate}
+		\item 我们知道了参数$\xi$的一个范围,它是在$g(x)$和$h(x)$之间，假设$g(x)\ge h(x)$,那么就有$h(x)\le \xi \le g(x)$,是不是有点夹逼定理的味道了?如果取极限后$g(x)$和$h(x)$相等，那么参数$\xi$就可以夹出来了.\\\underline{适用范围}:$g(x)$和$h(x)$都趋近于$x_0$,同时$
+			      \lim\limits_{x\rightarrow x_0}f'\left( x \right)
+		      $存在且不为$0$.\\\underline{不适用范围}:如果$g(x)$和$h(x)$都趋近于$0$(或$\infty$)，且$
+			      \lim\limits_{x\rightarrow 0/\infty}f'\left( x \right)
+		      $为$\infty$或者$0$,这时候夹逼定理得参数的值就不再适用了,尝试使用2搞.
+		\item 等价于某个关于$x$的式子:\\
+		      \underline{适用于}:当内层函数趋近于$0$,同时$x\rightarrow 0$,$f'\left( x \right) \backsim mx^k$(其中$m,k$为非$0$常数)或者当内层函数趋近于$\infty$,同时$x\rightarrow \infty$,$f'\left( x \right) \backsim mx^k$(其中$m,k$为非$0$常数).上述条件看似很严格,但是所幸在考研极限题目中,基本上都是满足的.
+	\end{enumerate}
+	对于数列极限,也可以运用Lagrange中值求解,只不过需要在运用之前将数列转变为函数,即$n \rightarrow x$,即可。2及相应的结论在计算小题时,可以快速得到答案;对于大题而言,可以用这个方法及结论快速判断能否用Lagrange中值,同时可以利用这个方法快速验算自己的结果.如果\underline{想要在大题中使用2}，则具体步骤要写的详细一点(利用\underline{夹逼定理}).\\
+	参考文章传送门:\href{https://zhuanlan.zhihu.com/p/368192940}{利用拉格朗日中值定理秒杀某些复杂极限问题——内含高级秒杀结论}
+\end{note}
+
+\begin{theorem}{Cauchy中值定理} \label{thm:Cauchy_middle_theorem}
+	设$f$与$g$满足:
+	\begin{enumerate}
+		\item 在闭区间$\left[ a,b \right] $上连续;
+		\item 在开区间$\left( a,b \right) $可导且$g'\left( x \right) \ne 0$.
+	\end{enumerate}
+	则至少存在一点$\xi \in \left( a,b \right) $,使
+	$$
+		\frac{f'\left( \xi \right)}{g'\left( \xi \right)}=\frac{f\left( b \right) -f\left( a \right)}{g\left( b \right) -g\left( a \right)}
+	$$
+\end{theorem}
+
+\begin{theorem}{L'Hospital法则}
+	\label{thm:L'Hospital_Law}
+	设$f$与$g$满足:
+	\begin{enumerate}
+		\item $\lim\limits_{x\rightarrow a}f\left( x \right) =0$, $\lim\limits_{x\rightarrow a}g\left( x \right) =0$;
+		\item 在$a$的去心邻域内$f$,$g$都可导,且$g'\left( x \right) \ne 0$;
+		\item $\lim\limits_{x\rightarrow a}\frac{f'\left( x \right)}{g'\left( x \right)}=A\left( \text{有限或无穷} \right) $.
+	\end{enumerate}
+	则有$\lim\limits_{x\rightarrow a}\frac{f\left( x \right)}{g\left( x \right)}=\lim\limits_{x\rightarrow a}\frac{f'\left( x \right)}{g'\left( x \right)}=A$.
+	将上述法则中$\lim\limits_{x\rightarrow a}f\left( x \right) =0$与$\lim\limits_{x\rightarrow a}g\left( x \right) =0$换成$\lim\limits_{x\rightarrow a}f\left( x \right) =\infty $与$\lim\limits_{x\rightarrow a}g\left( x \right) =\infty $即得L'Hospital法则Ⅱ.
+\end{theorem}
+
+\begin{example}
+	设$f(x)$在$[0, +\infty)$上可微,$f(0)=0$,并设有实数$A>0$,使得$| f'(x) | \le A |f(x)|$在$[0, +\infty)$成立.证明:在$[0, +\infty)$上$f(x)\equiv 0$.
+\end{example}
+
+\begin{note}
+	若$f(x)$在$[a,b]$上连续,$(a,b)$内可微,则在$[a,b]$上
+	$$
+		f\left( x \right) =f\left( x_0 \right) +f'\left( \xi \right) \left( x-x_0 \right) \left( \xi \text{在}x\text{与}x_0\text{之间} \right)
+	$$
+	这可视为函数$f(x)$的一种变形,它给出了\underline{函数与导数的一种关系}.
+	\vspace{7cm}
+\end{note}

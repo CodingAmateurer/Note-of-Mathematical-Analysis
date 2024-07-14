@@ -1,0 +1,68 @@
+\chapter{瑕积分}
+
+其他判别法与无穷积分平行，故不作展示.只需单独记忆Cauchy判别法的$p$的情况与无穷积分相反即可.
+
+\begin{example}
+	(Euler积分) 证明瑕积分$
+		J=\int_0^{\frac{\pi}{2}}{\ln \left( \sin x \right) dx}
+	$收敛,且$
+		J=-\frac{\pi}{2}\ln 2
+	$.
+\end{example}
+
+\begin{proof}
+	注意到在区间$(0,\frac{\pi}{2}]$上,且$
+		\lim\limits_{x\rightarrow 0}\ln \left( \sin x \right) =-\infty
+	$.因此,该瑕积分适合用比较判别法.\\由于$
+		\lim\limits_{x\rightarrow 0}\sqrt{x}\ln \left( \sin x \right) =0
+	$,故瑕积分$
+		J=\int_0^{\frac{\pi}{2}}{\ln \left( \sin x \right) dx}
+	$收敛.令$x=\frac{\pi}{2}-t$,则有
+	$$
+		J=\int_0^{\frac{\pi}{2}}{\ln \left( \sin x \right) dx}=\int_0^{\frac{\pi}{2}}{\ln \left( \cos x \right) dx}
+	$$
+	故
+	$$
+		2J=\int_0^{\frac{\pi}{2}}{\left[ \ln \left( \sin x \right) +\ln \left( \cos x \right) \right] dx}=\int_0^{\frac{\pi}{2}}{\ln \left( \frac{1}{2}\sin 2x \right) dx}
+	$$
+	$$
+		=\int_0^{\frac{\pi}{2}}{\ln \left( \sin 2x \right) dx}-\ln 2\int_0^{\frac{\pi}{2}}{dx}
+	$$
+	$$
+		=\frac{1}{2}\int_0^{\pi}{\ln \left( \sin u \right) du}-\frac{\pi}{2}\ln 2\left( \text{令}u=2x \right)
+	$$
+	$$
+		=\frac{1}{2}\int_0^{\frac{\pi}{2}}{\ln \left( \sin u \right) du}+\frac{1}{2}\int_{\frac{\pi}{2}}^{\pi}{\ln \left( \sin u \right) du}-\frac{\pi}{2}\ln 2
+	$$
+	$$
+		=\int_0^{\frac{\pi}{2}}{\ln \left( \sin u \right) du}-\frac{\pi}{2}\ln 2=J-\frac{\pi}{2}\ln 2
+	$$
+	即$
+		J=-\frac{\pi}{2}\ln 2
+	$.其中$$
+		\int_0^{\frac{\pi}{2}}{\ln \left( \sin u \right) du}=\int_0^{\frac{\pi}{2}}{\ln \left( \cos u \right) du}=\int_{\frac{\pi}{2}}^{\pi}{\ln \left( \sin u \right) du}
+	$$
+\end{proof}
+
+下面这个例子展示了Cauchy判别法以及瑕点判别方式.
+
+\begin{example}
+	讨论瑕积分$
+		\int_0^1{\frac{\ln x}{1-x}\text{d}x}
+	$的收敛性.
+\end{example}
+
+\begin{proof}
+	因为$
+		\lim\limits_{x\rightarrow 0^+}x^{\frac{1}{2}}\frac{\ln x}{1-x}=0
+	$,其中$p=\frac{1}{2}$,由Cauchy判别法的极限形式知原积分$
+		\int_0^1{\frac{\ln x}{1-x}\text{d}x}
+	$收敛.
+\end{proof}
+
+\begin{note}
+	$x=1$不是被积函数瑕点,因为
+	$$
+		\lim_{x\rightarrow 1}\frac{\ln x}{1-x}=1
+	$$
+\end{note}

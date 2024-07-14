@@ -1,0 +1,48 @@
+\chapter{Taylor公式}
+
+\begin{theorem}{Taylor中值定理}
+	设函数$f$在$x_0$的某个邻域内具有直到$(n+1)$阶导数,则对此邻域中每一点$x$,$f\left( x \right) $可表示为
+	$$
+		f\left( x \right) =f\left( x_0 \right) +\sum_{k=1}^n{\frac{f^{\left( k \right)}\left( x_0 \right)}{k!}}+\frac{f^{\left( n+1 \right)}\left( \xi \right)}{\left( n+1 \right) !}\left( x-x_0 \right) ^{n+1}
+	$$
+	其中$\xi $介于$x$与$x_0$之间,且$R_n\left( x \right) =\frac{f^{\left( n+1 \right)}\left( \xi \right)}{\left( n+1 \right) !}\left( x-x_0 \right) ^{n+1}$称为Lagrange余项.上式也称为$f$在点$x_0$处的带Lagrange余项的$n$阶Taylor公式.有时Taylor公式可以写成
+	$$
+		f\left( x \right) =f\left( x_0 \right) +\sum_{k=1}^n{\frac{f^{\left( k \right)}\left( x_0 \right)}{k!}}+o\left[ \left( x-x_0 \right) ^n \right]
+	$$
+	称为$f$在点$x_0$处的带Peano余项的$n$阶Taylor公式.
+\end{theorem}
+
+\begin{note}
+	当$x_0=0$时得到的Taylor公式也叫Maclaurin公式.常用的Maclaurin公式:
+	\begin{enumerate}
+		\item $e^x=1+x+\frac{x^2}{2!}+\cdots +\frac{x^n}{n!}+o\left( x^n \right) $.
+		\item $\sin x=x-\frac{x^3}{2!}+\frac{x^5}{5!}+\cdots +\left( -1 \right) ^{m-1}\frac{x^{2m-1}}{\left( 2m-1 \right) !}+o\left( x^{2m} \right) $.
+		\item $\cos x=1-\frac{x^2}{2!}+\cdots +\left( -1 \right) ^m\frac{x^{2m}}{\left( 2m \right) !}+o\left( x^{2m+1} \right) $.
+		\item $\ln \left( 1+x \right) =x-\frac{x^3}{2}+\cdots +\left( -1 \right) ^{n-1}\frac{x^{2n}}{n!}+o\left( x^{n} \right)$.
+	\end{enumerate}
+\end{note}
+
+\begin{example}
+	设$f\left( x\right) $在$\left[ 0,1 \right] $上二次可微,记$M_0=\underset{x\in \left[ 0,1 \right]}{\max}\left| f\left( x \right) \right|$,$M_1=\underset{x\in \left[ 0,1 \right]}{\max}\left| f'\left( x \right) \right|$,$M_2=\underset{x\in \left[ 0,1 \right]}{\max}\left| f''\left( x \right) \right| $.证明:$M_1\le 2M_0+\frac{1}{2}M_2$.
+\end{example}
+
+\begin{note}
+	若$\lim\limits_{x\rightarrow c}f\left( x \right) =A$存在,则$\lim\limits_{x\rightarrow c}\left| f\left( x \right) \right|$存在,且$\lim\limits_{x\rightarrow c}\left| f\left( x \right) \right|=\left| A \right|$.
+	\vspace{7cm}
+\end{note}
+
+\begin{example}
+	设$f\left( x\right) $在$\left( -\infty ,+\infty \right) $上二次可微,且对任意$x\in \left( -\infty ,+\infty \right) $,有$\left| f\left( x \right) \right|\le M_0$,$\left| f'\left( x \right) \right|\le M_1$,\\$\left| f''\left( x \right) \right|\le M_2$,其中$M_0,M_1,M_2 $为正常数.证明:对任意$x\in \left( -\infty ,+\infty \right) $,有$M_{1}^{2}\le 2M_0M_2$.
+\end{example}
+
+\vspace{7cm}
+
+\begin{example}
+	设函数$f\left( x\right) $在$\left[ a,b \right] $上连续且变号$($即非恒正,也非恒负$)$,在$\left( a,b\right) $二阶可导,且$f\left( a\right) =f\left( b\right) =0$.证明:至少存在一点$\xi \in \left( a,b \right) $,使得$f''\left( \xi \right) <0$.
+\end{example}
+
+\vspace{7cm}
+
+\begin{example}
+	设$f\left( x\right) $在$\left( 0 ,+\infty \right) $上三次可导,且$\lim\limits_{x\rightarrow \infty}f\left( x\right) $与$\lim\limits_{x\rightarrow \infty}f'''\left( x\right) $存在.求$\lim\limits_{x\rightarrow \infty}f'\left( x\right) $和$\lim\limits_{x\rightarrow \infty}f''\left( x\right) $.
+\end{example}

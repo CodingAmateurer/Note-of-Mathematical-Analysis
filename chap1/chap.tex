@@ -1,0 +1,126 @@
+\chapter{一致连续}
+
+\section{一致连续的定义及其否定形式}
+
+\begin{theorem}
+	设$f\left( x \right)$在区间$I$上有定义$($$I$为为开、闭、半开半闭,有限,无限区间$)$.所谓$f\left( x \right)$在$I$上一致连续.意指:
+	$$
+		\forall \varepsilon >0,\exists \delta >0,\text{当}x',x''\in I,\left| x'-x'' \right|<\delta \text{时，有}\left| f\left( x' \right) -f\left( x'' \right) \right|<\varepsilon .
+	$$
+	如此,$f\left( x \right)$在$I$上非一致连续.
+	$$ 		\Longleftrightarrow \exists \varepsilon _0>0,\forall \delta >0,\exists x_{\delta}^{'},x_{\delta}^{''}\in I:\text{虽}\left| x_{\delta}^{'}-x_{\delta}^{''} \right|<\delta ,$$
+	$$\text{但}\left| f\left( x_{\delta}^{'} \right) -f\left( x_{\delta}^{''} \right) \right|\ge \varepsilon _0.$$ $$ \notag \\
+		\Longleftrightarrow  \exists \varepsilon _0>0,\forall \frac{1}{n}>0,\exists x_{n}^{'},x_{n}^{''}\in I\left( n=1,2,\cdots \right) :$$
+	$$ \notag \\
+		\text{虽然}\left| x_{n}^{'}-x_{n}^{''} \right|<\frac{1}{n},\text{但是}\left| f\left( x_{n}^{'} \right) -f\left( x_{n}^{''} \right) \right|\ge \varepsilon _0. \notag$$
+\end{theorem}
+
+\begin{corollary}
+	若$\exists \varepsilon _0>0,\forall,\exists x_{n}^{'},x_{n}^{''}\in I\left( n=1,2,\cdots \right)$,虽然$\lim\limits_{n\rightarrow \infty}x_{n}^{'}=\lim\limits_{n\rightarrow \infty}x_{n}^{''}=a$,但是$\left| f\left( x_{n}^{'} \right) -f\left( x_{n}^{''} \right) \right|\ge \varepsilon _0\left( n=1,2,\cdots \right)$,则可断定$f$在$I$上非一致连续.
+\end{corollary}
+
+\begin{theorem}{Lipschitz条件}
+	$$
+		\left| f\left( x' \right) -f\left( x'' \right) \right|<L\left| x'-x'' \right|,\ \forall x',x''\in I
+	$$
+	其中$L>0$为某一常数，此条件成立必一致连续.特别地，若$f$在$I$上存在有界导函数，则$f$在$I$满足\textbf{Lipschitz条件}.
+\end{theorem}
+
+\begin{example}
+	设$f$是区间$I$上的实函数，试证如下三个条件有逻辑关系:1.$ \Rightarrow 2. \Rightarrow 3.$
+	\begin{enumerate}
+		\item $f$在$I$上可导且导函数有界，即:$\exists M>0$使得$$\left| f\left( x \right) ' \right|<M\left( \forall x\in I \right) $$
+		\item $f$在$I$上满足\textbf{Lipschitz条件}，即$\exists L>0$使得
+		      $$
+			      \left| f\left( x' \right) -f\left( x'' \right) \right|<L\left| x'-x'' \right|,\,\,\left( \forall \right. x',x''\in \left. I \right)
+		      $$
+		\item $f$在$I$上一致连续.
+	\end{enumerate}
+\end{example}
+
+\vspace*{6cm}
+
+\section{一致连续和连续之间}
+
+\begin{theorem}{一致连续性定理/Cantor定理}
+	若函数$f$在$\left[ a,b \right] $上连续，则$f$在$\left[ a,b \right] $上一致连续.
+\end{theorem}
+
+接下来是\textbf{开区间}以及\textbf{无穷区间}的例题，这类题目需要注意区间的分割问题，下面是两道经典例题.
+
+\begin{example}
+	设$f\left( x \right) $在有限开区间$\left( a,b \right) $内连续，试证$f\left( x \right) $在$\left( a,b \right) $内一致连续的充要条件是极限$\lim\limits_{x\rightarrow a^+}f\left( x \right) $及$\lim\limits_{x\rightarrow b^-}f\left( x \right) $存在(有限).
+\end{example}
+
+\begin{note}
+	此例表明:在有限开区间上连续函数是否连续一致，取决于函数在端点附近的状态.
+\end{note}
+
+\vspace{8cm}
+
+\begin{example}
+	若$f\left( x \right) $在$\left[ a,+\left. \infty \right) \right. $上连续,$\lim\limits_{x\rightarrow \infty}f\left( x \right) =A$(有限).证明:$f\left( x \right) $在$\left[ a,+\left. \infty \right) \right. $上一致连续.
+\end{example}
+
+\begin{note}
+	此例需注意区间的分割问题.在分区间讨论时，让分出的区间有一部分重复，这样做非常有好处.在适当选取$\delta $后,$x',x''$要么同时落入$\left[ a,A+1 \right] $,要么同时落入$\left[ \left. A,+\infty \right) \right. $.从而避免了分界点$A$一边有一个点的情况.
+\end{note}
+
+\vspace{7cm}
+
+然后是\textbf{渐近线}和一致连续的相关例题.
+
+\begin{example}
+	若$f\left( x \right) $在$\left[ a,+\left. \infty \right) \right. $上一致连续,$\varphi \left( x \right) $在$\left[ a,+\left. \infty \right) \right. $上连续,且满足$\lim\limits_{x\rightarrow \infty}\left[ f\left( x \right) -\varphi \right. \left. \left( x \right) \right] =0$.证明:$\varphi \left( x \right) $在$\left[ a,+\left. \infty \right) \right. $上一致连续.
+\end{example}
+
+\vspace{6cm}
+
+\begin{example}
+	设$f\left( x \right) $在$\left[ c,+\left. \infty \right) \right. $上连续,且当$x\rightarrow +\infty $时,$f\left( x \right) $有渐近线$y=ax+b$,试证$f\left( x \right) $在$\left[ c,+\left. \infty \right) \right. $上一致连续.
+\end{example}
+
+\begin{remark}
+	运用上一题相同证明方法.
+\end{remark}
+
+\vspace{8cm}
+
+\begin{example}
+	设实函数$f\left( x \right) $在$\left[ 0,+\left. \infty \right) \right. $上连续,在$\left( 0,+\infty \right) $内处处可导,且$\lim\limits_{x\rightarrow \infty}\left| f'\left( x \right) \right|=A $(存在).证明:当且仅当$A<+\infty $时,$f\left( x \right) $在$\left[ 0,+\left. \infty \right) \right. $上一致连续.
+\end{example}
+
+\vspace{8cm}
+
+\begin{example}
+	设$f\left( x \right) $在$\left( -\infty ,+\infty \right) $上一致连续,则存在非负实数$a$与$b$，对一切$x\in \left( -\infty ,+\infty \right) $都有$\left| f\left( x \right) \right|\le a\left| x \right|+b$.
+\end{example}
+
+\vspace{8cm}
+
+\begin{example}
+	设$f\left( x \right) $在$\left( a ,b \right) $上为一致连续的充要条件是:对在$\left( a ,b \right) $内任意两数列$\left\{ x_n \right\} ,\left\{ x_{n}^{'} \right\} $,只要$x_n-x_{n}^{'}\rightarrow 0$,只要$f\left( x_n \right) -f\left( x_{n}^{'} \right) \rightarrow 0$.
+\end{example}
+
+\vspace{8cm}
+
+\begin{example}
+	设函数$f$在闭$\left[ a,+\left. \infty \right) \right. $上连续,且存在常数$b$,$c$,使得
+	$$
+		\lim_{x\rightarrow +\infty}\left[ f\left( x \right) -bx-c \right] =0
+	$$
+	证明:$f$在$\left[ a,+\left. \infty \right) \right. $上一致连续.
+\end{example}
+
+\vspace{8cm}
+
+\begin{example}
+	证明函数$f\left( x \right) =\sin \frac{1}{x}$在区间$\left( 0 ,+\infty \right) $内一致连续.
+\end{example}
+
+\begin{note}
+	这里用到了这样一个事实——若$f\left( x \right) $在$\left( \left. 0,A \right] \right. $与$\left[ \left. A,+\infty \right) \right. $上分别一致连续,则$f\left( x \right) $在$\left( 0 ,+\infty \right) $内一致连续.
+	\vspace{6cm}
+\end{note}
+
+\newpage

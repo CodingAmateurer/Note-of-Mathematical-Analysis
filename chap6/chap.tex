@@ -1,0 +1,173 @@
+\chapter{不等式与凸函数}
+
+\section{不等式}
+
+\subsection*{a. 利用单调性证明不等式}
+
+若$f'\left( x \right) \ge 0\left( \text{或}f'\left( x \right) >0 \right) $,则当$x_1<x_2$时,有$$f\left( x_1 \right) \le f\left( x_2 \right) \left( \text{或} f\left( x_1 \right) <f\left( x_2 \right) \right)$$由此可获得不等式.
+
+\subsection*{b. 利用微分中值定理证明不等式}
+
+\begin{enumerate}
+	\item 若$f\left( x \right) $在$\left[ a,b \right] $上连续,在$\left( a,b \right) $内可导,则
+	      $$
+		      f\left( x \right) =f\left( a \right) +f'\left( \xi \right) \left( x-a \right) \ \left( \xi \in \left( a,b \right) \right)
+	      $$
+	      故当$f\left( a \right) =0$,$\left( a,b \right) $内$f'\left( x \right) >0$时,有$f\left( x \right) >0\ \left( \forall x\in \left( \left. a,b \right] \right. \right) $.
+	\item 在上述条件下,有
+	      $$
+		      f'\left( \xi \right) =\frac{f\left( b \right) -f\left( a \right)}{b-a}
+	      $$
+	      其中$\xi \in \left( a,b \right) $,若$f'\left( x \right) $严$\nearrow $,则
+	      $$
+		      f'\left( a \right) <\frac{f\left( b \right) -f\left( a \right)}{b-a}<f'\left( b \right)
+	      $$
+\end{enumerate}
+
+\subsection*{c. 利用Taylor公式证明不等式}
+
+要$f\left( x \right) $在$\left[ a,b \right] $上有连续$n$阶导数,且$$f\left( a \right) =f'\left( a \right) =\cdots =f^{\left( n-1 \right)}\left( a \right) =0$$$f^{\left( n \right)}\left( x \right) >0$$($当$\xi \in \left( a,b \right) $时$)$,则
+			$$
+				f\left( x \right) =\frac{f^n\left( \xi \right)}{n!}\left( x-a \right) ^n>0\ \left( \text{当}x\in \left( \left. a,b \right] \right. \text{时} \right)
+			$$
+
+			\subsection*{d. 用求极值的方法证明不等式}
+
+			要证明$f\left( x \right) \ge g\left( x \right) $,只要求函数$F\left( x \right) \equiv f\left( x \right) -g\left( x \right) $的极值,证明$\min F\left( x \right) \ge 0$.这是证明不等式的基本方法.
+
+			\subsection*{e. 利用单调极限证明不等式}
+
+			若当$x<b$时,$f\left( x \right)\nearrow $$($或严$\nearrow$$)$,且当$x\rightarrow b-0$时$f\left( x \right) \rightarrow A$(以上条件今后简记作$f\left( x \right)\nearrow $$($或$f\left( x \right)$严$\nearrow A$,当$x\rightarrow b-0$时$))$,则
+$$
+	f\left( x \right) \le A\left( \text{当}x<b\text{时} \right) \left( \text{或}f\left( x \right) <A\left( \text{当}x<b\text{时} \right) \right) .
+$$
+对于递减或者严格递减,也有类似结论.
+
+\section{凸函数}
+
+\begin{definition} \label{def:tuhanshu0}
+	设$f\left( x \right) $在区间$I$上有定义,$f\left( x \right) $在$I$上称为\textbf{凸函数},当且仅当$\forall x_1,x_2\in I$,$\forall \lambda \in \left( 0,1 \right) $,有
+	$$
+		f\left( \lambda x_1+\left( 1-\lambda \right) x_2 \right) \le \lambda f\left( x_1 \right) +\left( 1-\lambda \right) f\left( x_2 \right)
+	$$
+	凹凸函数与单调函数一样同样有严格之分.
+\end{definition}
+
+\begin{definition} \label{def:tuhanshu1}
+	设$f\left( x \right) $在区间$I$上有定义,$f\left( x \right) $在$I$上称为\textbf{凸函数},当且仅当$\forall x_1,x_2\in I$,有
+	$$
+		f\left( \frac{x_1+x_2}{2} \right) \le f\left( x_1 \right) +f\left( x_2 \right)
+	$$设$f\left( x \right) $在区间$I$上有定义,$f\left( x \right) $在$I$上称为\textbf{凸函数},当且仅当$\forall x_1,x_2\in I$,有
+	$$
+		f\left( \frac{x_1+x_2}{2} \right) \le f\left( x_1 \right) +f\left( x_2 \right)
+	$$
+\end{definition}
+
+\begin{corollary} \label{cor:tuhanshu0}
+	设$f\left( x \right) $在区间$I$上有定义,$f\left( x \right) $在$I$上称为\textbf{凸函数},当且仅当$\forall x_1,x_2,\cdots ,x_n\in I$,有
+	$$
+		f\left( \frac{x_1+x_2+\cdots +x_n}{n} \right) \le f\left( x_1 \right) +f\left( x_2 \right) +\cdots +f\left( x_n \right)
+	$$
+\end{corollary}
+
+\begin{theorem}
+	若$f\left( x \right) $连续,则推论\ref{cor:tuhanshu0},定义\ref{def:tuhanshu0}和\ref{def:tuhanshu1}等价.
+\end{theorem}
+
+\begin{theorem}
+	设$f\left( x \right) $在区间$I$上有定义,则一下条件等价$($其中各不等式要求$\forall x_1,x_2,x_3\in I,\ x_1<x_2<x_3$保持成立$)$:
+	\begin{enumerate}
+		\item $\frac{f\left( x_2 \right) -f\left( x_1 \right)}{x_2-x_1}\le \frac{f\left( x_3 \right) -f\left( x_1 \right)}{x_3-x_1}$;
+		\item $\frac{f\left( x_3 \right) -f\left( x_1 \right)}{x_3-x_1}\le \frac{f\left( x_3 \right) -f\left( x_2 \right)}{x_3-x_2}$;
+		\item $\frac{f\left( x_2 \right) -f\left( x_1 \right)}{x_2-x_1}\le \frac{f\left( x_3 \right) -f\left( x_2 \right)}{x_3-x_2}$;
+		\item $f\left( x \right) $在$I$上称为\textbf{凸函数};
+		\item 曲线$y=f\left( x \right) $上三点$A\left( x_1,f\left( x_1 \right)  \right) $,$B\left( x_2,f\left( x_2 \right)  \right) $,$C\left( x_3,f\left( x_3 \right)  \right) $所围的有向曲面积
+		      $$
+			      \frac{1}{2}\left| \begin{matrix}
+				      1 & x_1 & f\left( x_1 \right) \\
+				      1 & x_2 & f\left( x_2 \right) \\
+				      1 & x_3 & f\left( x_3 \right) \\
+			      \end{matrix} \right|\ge 0
+		      $$
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	若$f\left( x \right) $在$I$上称为\textbf{凸函数},则$I$上任意三点$x_1<x_2<x_3$,有
+	$$
+		\frac{f\left( x_2 \right) -f\left( x_1 \right)}{x_2-x_1}\le \frac{f\left( x_3 \right) -f\left( x_1 \right)}{x_3-x_1}\le \frac{f\left( x_3 \right) -f\left( x_2 \right)}{x_3-x_2}
+	$$
+\end{corollary}
+
+\begin{corollary}
+	若$f\left( x \right) $在$I$上称为\textbf{凸函数},则$\forall x_0\in I$,过$x_0$的弦的斜率
+	$$
+		k\left( x \right) =\frac{f\left( x \right) -f\left( x_0 \right)}{x-x_0}
+	$$
+	时$x$的增函数.
+\end{corollary}
+
+\begin{corollary}
+	若$f\left( x \right) $在$I$上称为\textbf{凸函数},则$I$上任意四点$s<t<u<v$,有
+	$$
+		\frac{f\left( t \right) -f\left( s \right)}{t-s}\le \frac{f\left( v \right) -f\left( u \right)}{v-u}
+	$$
+\end{corollary}
+
+\begin{corollary}
+	若$f\left( x \right) $在$I$上称为\textbf{凸函数},则对$I$内任一内点$x$,单侧导数$f_{+}^{'}\left( x \right) $与$f_{-}^{'}\left( x \right) $皆存在,且为增函数,且
+	$$
+		f_{-}^{'}\left( x \right) \le f_{+}^{'}\left( x \right) \ \left( \forall x\in I^o \right)
+	$$
+	这里$I^o$表示全体$I$的全体内点组成之集合.
+\end{corollary}
+
+\begin{corollary}
+	若$f\left( x \right) $在区间$I$上为凸的,则$f$在任一内点$x \in I^o $上连续.
+\end{corollary}
+
+\begin{theorem}
+	设函数$f\left( x \right) $在区间$I$上有定义,则$f\left( x \right) $是凸函数的充要条件是:$\forall x_0\in I^0 $,$\exists \text{实数}\alpha $,使得$\forall x\in I$有$f\left( x \right) \ge \alpha \left( x-x_0 \right) +f\left( x_0 \right) $.
+\end{theorem}
+
+\begin{corollary}
+	设$f\left( x \right) $在区间$I$内可导,则$f\left( x\right) $在$I$上为凸的充要条件:$\forall x_0\in I^0$,有
+	$$
+		f\left( x \right) \ge f'\left( x_0 \right) \left( x-x_0 \right) +f\left( x_0 \right) \ \left( \forall x\in I \right)
+	$$
+\end{corollary}
+
+\begin{corollary}
+	设$f\left( x \right) $在区间$I$为凸的,则:$\forall x_0\in I^0$,在曲线$y=f\left( x \right) $上一点$\left( x_0,f\left( x_0\right) \right) $可作一条直线
+	$$
+		L:y=\alpha \left( x-x_0 \right) +f\left( x_0 \right)
+	$$
+	使曲线$y=f\left( x\right) $位于直线$L$上方.
+\end{corollary}
+
+\begin{note}
+	\underline{若$f$为严格凸函数,则除点$\left( x_0,f\left( x_0\right) \right) $之外曲线严格地在直线$L$的上方}.这是著名\underline{分离性定理}.直线$L$称为$y=f\left( x\right) $的\underline{支撑}.
+\end{note}
+
+\begin{theorem}
+	设$f\left( x \right) $在区间$I$内有导数,则$f\left( x \right) $在区间$I$上为凸函数的充要条件是$f'\left( x \right) \nearrow \left( x\in I \right) $.
+\end{theorem}
+
+\begin{corollary}
+	若$f\left( x \right) $在区间$I$内有二阶导数,则设$f\left( x \right) $在区间$I$上为凸函数的充要条件是$f''\left( x \right) \ge 0$.
+\end{corollary}
+
+\begin{theorem}
+	若$f\left( x \right) $在区间$I$上有定义,则以下三条件等价:
+	\begin{enumerate}
+		\item $f\left( x \right) $在区间$I$上为凸函数;
+		\item $\forall q_i\ge 0:q_1+q_2+\cdots +q_n=1,\forall x_1,x_2,\cdots ,x_n\in I$有;
+		      $$
+			      f\left( q_1x_1+q_2x_2+\cdots +q_nx_n \right) \le q_1f\left( x_1 \right) +q_2f\left( x_2 \right) +\cdots +q_nf\left( x_n \right)
+		      $$
+		\item $\forall p_i\ge 0\left( i=1,2,\cdots ,n \right) $不全为零,$\forall x_1,x_2,\cdots ,x_n\in I$,有
+		      $$
+			      f\left( \frac{p_1x_1+p_2x_2+\cdots +p_nx_n}{p_1+p_2+\cdots +p_n} \right) \le \frac{p_1f\left( x_1 \right) +p_2f\left( x_2 \right) +\cdots +p_nf\left( x_n \right)}{p_1+p_2+\cdots +p_n}
+		      $$
+	\end{enumerate}
+\end{theorem}

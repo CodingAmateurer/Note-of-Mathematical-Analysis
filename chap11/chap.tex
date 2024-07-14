@@ -1,0 +1,48 @@
+\chapter{积分不等式}
+
+\begin{theorem}{Cauchy-schwarz不等式}
+	$$
+		\int_0^1{f^2\left( x \right) \text{d}x}\int_0^1{g^2\left( x \right) \text{d}x}\ge \left( \int_0^1{f\left( x \right) g\left( x \right) \text{d}x} \right) ^2
+	$$
+\end{theorem}
+
+\section{待定系数法证明积分不等式}
+
+\begin{example}
+	设$f:[0,1]\rightarrow \mathbb{R}$是Riemann可积函数,满足$
+		\int_0^1{xf\left( x \right) \text{d}x}=0
+	$.证明:$
+		\int_0^1{f^2\left( x \right) \text{d}x}\ge 4\left( \int_0^1{f\left( x \right) \text{d}x} \right) ^2
+	$.
+\end{example}
+
+\begin{note}
+	如果设$p(x)$是多项式,则由Cauchy-schwarz不等式,
+	$$
+		\int_0^1{f^2\left( x \right) \text{d}x}\int_0^1{p^2\left( x \right) \text{d}x}\ge \left( \int_0^1{f\left( x \right) p\left( x \right) \text{d}x} \right) ^2
+	$$,由于$
+		\int_0^1{xf\left( x \right) \text{d}x}=0
+	$,要保证不等号右边只含$f(x)$,则$p(x)$最多只能是一次多项式,即$deg\ p\left( x \right) =1$,记$
+		p\left( x \right) =a_1x+a_0
+	$,于是$$
+		\int_0^1{p^2\left( x \right) \text{d}x}=\frac{1}{3a_1}\left[ \left( a_1+a_0 \right) ^3-a_{0}^{3} \right]
+	$$比较欲证命题的系数可知$$
+		\frac{a_{0}^{2}}{4}=\frac{1}{3a_1}\left[ \left( a_1+a_0 \right) ^3-a_{0}^{3} \right]
+	$$因此可以让$a_0=-2$,$a_1=3$即可.\\
+	同思路题视频传送门:\href{https://www.bilibili.com/video/BV11Q4y1H7QJ?vd_source=0ca98d2b715e9460da2e574e42c1ab8d}{全国大学生数学竞赛非专业组，一类积分不等式难题通解方法}\\
+	参考文章传送门:\href{https://zhuanlan.zhihu.com/p/107553208}{数分笔记——待定系数法证积分不等式}
+\end{note}
+
+\begin{example}
+	设$f \in C^1[0,1]$,满足$f(0)=f(1)=f'(0),f'(1)=1$,则$
+		\int_0^1{\left( f''\left( x \right) \right) ^2dx}\ge 4
+	$.
+\end{example}
+
+\vspace*{7cm}
+
+\begin{example}
+	设$f \in C^1[0,1]$,满足$f(0)=f(1)=0$,则$
+		\int_0^1{\left( f'\left( x \right) \right) ^2dx}\ge 4\left( \int_0^1{f\left( x \right) \text{d}x} \right) ^2
+	$.
+\end{example}

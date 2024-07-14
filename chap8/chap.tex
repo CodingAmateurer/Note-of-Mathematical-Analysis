@@ -1,0 +1,60 @@
+\chapter{通法框架三步法}
+
+对于本部分内容,需运用常微分等等思想,方法思路来源于b站up主\href{https://space.bilibili.com/1733573094}{习之侃数}.下面用一个例题来演示:
+
+\begin{example}
+	设$f(x)$在$[a,b]$上可导,且$a>0$,$f'(x) \ne 0$,证明:$\exists \xi,\eta \in(a,b)$使得$\xi f'\left( \xi \right) \ln \frac{b}{a}=\left( b-a \right) f'\left( \eta \right)$.
+\end{example}
+
+\begin{note}
+	先对本题按如下步骤进行分析:
+	\begin{enumerate}
+		\item 将中值$\xi$暂时视为常数
+		      $$\xi f'\left( \xi \right) \ln \frac{b}{a}=\left( b-a \right) f'\left( x \right)$$
+		\item 对式子两边进行积分等操作
+		      $$\Rightarrow \xi f'\left( \xi \right) \ln \frac{b}{a}=\left( b-a \right) \frac{df\left( x \right)}{dx}$$
+		      $$
+			      \Rightarrow \left[ \xi f'\left( \xi \right) \ln \frac{b}{a} \right] dx=\left( b-a \right) df\left( x \right)
+		      $$
+		      $$
+			      \Rightarrow \left[ \xi f'\left( \xi \right) \ln \frac{b}{a} \right] \int{dx}=\left( b-a \right) \int{df\left( x \right)}
+		      $$
+		      $$
+			      \Rightarrow \left( b-a \right) f\left( x \right) =\left[ \xi f'\left( \xi \right) \ln \frac{b}{a} \right] x+C
+		      $$
+		\item 于是可以得到
+		      $$
+			      \left( b-a \right) f\left( x \right) -\left[ \xi f'\left( \xi \right) \ln \frac{b}{a} \right] x=C
+		      $$故令辅助函数$$
+			      F\left( x \right) =\left( b-a \right) f\left( x \right) -\left[ \xi f'\left( \xi \right) \ln \frac{b}{a} \right] x
+		      $$再令$F(a)=F(b)$,则$$
+			      \xi f'\left( \xi \right) \ln \frac{b}{a}=f\left( b \right) -f\left( a \right)
+		      $$再进行二次构造得
+		      $$
+			      G\left( x \right) =f\left( x \right) \ln \frac{b}{a}-\left[ f\left( b \right) -f\left( a \right) \right] \ln x
+		      $$
+	\end{enumerate}
+\end{note}
+
+\begin{proof}
+	\begin{enumerate}
+		\item 令$
+			      G\left( x \right) =f\left( x \right) \ln \frac{b}{a}-\left[ f\left( b \right) -f\left( a \right) \right] \ln x
+		      $,则$G(a)=G(b)$,计算过程如下:
+		      $$
+			      G\left( b \right) -G\left( a \right) =\left[ f\left( b \right) -f\left( a \right) \right] \ln \frac{b}{a}+\left[ f\left( b \right) -f\left( a \right) \right] \left[ \ln a-\ln b \right] =0
+		      $$
+		      由Rolle定理可得,$\exists \xi \in (a,b)(a,b \ne 0)$使得$G'(\xi)=0$,即$
+			      f'\left( \xi \right) \ln \frac{b}{a}=\frac{f\left( b \right) -f\left( a \right)}{\xi}
+		      $
+		\item 再令$
+			      F\left( x \right) =\left( b-a \right) f\left( x \right) -\left[ \xi f'\left( \xi \right) \ln \frac{b}{a} \right] x
+		      $,其中$
+			      f\left( b \right) -f\left( a \right) =\xi f'\left( \xi \right) \ln \frac{b}{a}
+		      $,
+		      则$$
+			      F\left( b \right) -F\left( a \right) =\left( b-a \right) \left[ f\left( b \right) -f\left( a \right) \right] +\left[ \xi f'\left( \xi \right) \ln \frac{b}{a} \right] \left( a-b \right) =0
+		      $$
+		      即$F(a)=F(b)$,由Rolle定理可得,$\exists \eta \in (a,b)$使得$F'(\eta)=0$,即$\xi f'\left( \xi \right) \ln \frac{b}{a}=\left( b-a \right) f'\left( \eta \right)$.
+	\end{enumerate}
+\end{proof}

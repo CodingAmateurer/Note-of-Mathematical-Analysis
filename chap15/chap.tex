@@ -1,0 +1,50 @@
+\chapter{函数项级数}
+
+\begin{definition}
+	设$u_n(x)(n=1,2,3,\cdots)$是具有公共定义域$E$的一列函数，我们将这无穷个函数$$u_1(x)+u_2(x)+\cdots+u_n(x)+\cdots$$称为函数项级数，记为$\sum_{n=1}^{\infty}{u_n\left( x \right)}$.
+\end{definition}
+
+\section{等度连续}
+
+\begin{definition}{等度连续}
+	设$\mathbb{H}$是区间$I$上定义的函数族,所谓族$\mathbb{H}$上的函数在$I$上等度连续是指:\\
+	$
+		\forall \varepsilon >0,\exists \delta >0
+	$当$x_1,x_2\in I$且$|x_1 -x_2|<\delta$时,有
+	$$|f(x_1)-f(x_2)|<\varepsilon  (\forall f\in\mathbb{H})$$
+	特别,$I$上定义的函数序列$\left\lbrace  f_n (x) \right\rbrace $在$I$上等度连续是指:\\
+	$
+		\forall \varepsilon >0,\exists \delta >0
+	$当$x_1,x_2\in I$且$|x_1 -x_2|<\delta$时,有
+	$$|f_n (x_1)-f_n (x_2)|<\varepsilon  (\forall n\in\mathbb{H})$$
+\end{definition}
+
+显然,若$\mathbb{H}$是有限族(即由有限个函数组成),且$I$为有界闭区间,那么$\mathbb{H}$中每个函数连续,就必然等度连续.若$\mathbb{H}$为无穷族,$\mathbb{H}$中每个成员连续,$\mathbb{H}$不见得是等度连续的.
+
+\begin{example}
+	设函数列$\left\lbrace f_n(x) \right\rbrace $在区间$[a,b]$上为等度连续的.试证:若在$[a,b]$上$f_n(x)\rightarrow f(x)(n\rightarrow \infty)$,则在$[a,b]$上
+	$$f_n(x)\rightrightarrows f(x) (n\rightarrow \infty).$$
+\end{example}
+
+\begin{proof}
+	由$\left\lbrace f_n(x) \right\rbrace $在区间$[a,b]$上为等度连续,知$f(x)$在$[a,b]$上一致连续,因而$
+		\forall \varepsilon >0,\exists \delta >0
+	$当$x',x''\in [a,b]$且$|x' -x''|<\delta$时,有
+	$$|f_n(x')-f_n(x'')|<\frac{\varepsilon}{3}, |f(x')-f(x'')|<\frac{\varepsilon}{3}$$
+	今将$[a,b]k$等分,使每个小区间的长度小于$\delta$(这是可以办到的,只要令$\frac{b-a}{k}<\delta$,即$k>\frac{b-a}{\delta}$便可).记$k$等分的各分点为
+	$$a=a_0<a_1<\cdots <a_k=b$$
+	因为$f_n(a_i) \rightarrow f(a_i)(n\rightarrow \infty)$,所以对上述$
+		\varepsilon >0,\exists N_i >0
+	$使得$n>N_i$,有
+	$$|f_n(a_i)-f(a_i)|<\frac{\varepsilon}{3}(i=1,2,\cdots,k)$$
+	令$N=max\left\lbrace N_1,N_2,\cdots,N_k \right\rbrace $,则当$n>N$时,$\forall x \in [a,b], \exists a_i(i\in\left\lbrace 1,2,\cdots,k \right\rbrace )$使得$|a_i-x|<\delta$,
+	$$|f_n(x)-f(x)|\le |f_n(x)-f_n(a_i)|+|f_n(a_i)-f(a_i)|+|f(a_i)-f(x)|$$
+	$$<\frac{\varepsilon}{3}+\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\varepsilon$$
+	这就证明了:在$[a,b]$上$f_n(x)\rightrightarrows f(x) (n\rightarrow \infty).$
+\end{proof}
+
+\section{幂级数}
+
+我们将形如$$
+\sum_{n=0}^{\infty}{a_n\left( x-x_0 \right) ^n}=a_0+a_1\left( x-x_0 \right) +a_2\left( x-x_0 \right) ^2+\cdots +a_n\left( x-x_0 \right) ^n+\cdots 
+$$的函数项级数称为幂级数.

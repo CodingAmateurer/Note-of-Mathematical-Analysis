@@ -1,0 +1,17 @@
+\chapter{实数完备性基本定理的相互证明}
+
+\section{确界原理}
+
+\begin{example}
+	\textbf{确界原理}证明\textbf{单调有界定理}.
+\end{example}
+
+\begin{proof}
+	不妨设$\left\lbrace a_n \right\rbrace $为有上界的递增数列.由确界原理,数列$\left\lbrace a_n \right\rbrace $有上确界,记$a = sup\left\lbrace a_n \right\rbrace$.下面证明$a$就是$\left\lbrace a_n \right\rbrace$的极限.\\
+	事实上,任给$\varepsilon > 0$,按上确界的定义,存在数列的某一项$\left\lbrace a_n \right\rbrace$中的某一项$\left\lbrace a_N \right\rbrace$,使得$a-\varepsilon<a_N$.又由$\left\lbrace a_n \right\rbrace$的递增性,当$n \geq N$时有$$a-\varepsilon<a_N \le a_n$$.
+	另一方面,由于$a$是$\left\lbrace a_n \right\rbrace$的一个上界,故对一切$a_n$都有$a_n \le a < a + \varepsilon$.所以当$n \geq N$时有$$a-\varepsilon<a_n<a+\varepsilon,$$这就证得$\lim\limits_{n\rightarrow +\infty}a_n =a$.同理可证有下界的递减数列必有极限,且极限为它的下确界.
+\end{proof}
+
+\begin{example}
+	\textbf{确界原理}证明\textbf{区间套定理}.
+\end{example}

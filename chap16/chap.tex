@@ -1,0 +1,45 @@
+\chapter{含参量普通积分}
+
+\begin{example}
+	设$f$在$
+		C^1\left[ 0,1 \right]
+	$,证明:$
+		\lim\limits_{n\rightarrow \infty}\left[ \sum_{k=1}^n{f\left( \frac{k}{n} \right) -n\int_0^1{f\left( x \right)}dx} \right] =\frac{f\left( 1 \right) -f\left( 0 \right)}{2}
+	$.
+\end{example}
+
+\begin{proof}
+	$$
+		I_n=n\left[ \frac{1}{n}\sum_{k=1}^n{f\left( \frac{k}{n} \right) -\sum_{k=1}^n{\int_{\frac{k-1}{n}}^{\frac{k}{n}}{f\left( x \right)}dx}} \right] =n\sum_{k=1}^n{\left[ \frac{1}{n}f\left( \frac{k}{n} \right) -\int_{\frac{k-1}{n}}^{\frac{k}{n}}{f\left( x \right)}dx \right]}
+	$$
+	$$
+		=n\sum_{k=1}^n{\left[ \int_{\frac{k-1}{n}}^{\frac{k}{n}}{f\left( \frac{k}{n} \right) dx}-\int_{\frac{k-1}{n}}^{\frac{k}{n}}{f\left( x \right)}dx \right]}=n\sum_{k=1}^n{\left[ \int_{\frac{k-1}{n}}^{\frac{k}{n}}{\left( f\left( \frac{k}{n} \right) -f\left( x \right) \right) dx} \right]}
+	$$
+	使用Lagrange中值定理可得$
+		\exists \xi _k\in \left( \frac{k-1}{n},\frac{k}{n} \right)
+	$使得
+	$$
+		f\left( \frac{k}{n} \right) -f\left( x \right) =f'\left( \xi _k\left( x \right) \right) \left( \frac{k}{n}-x \right)
+	$$
+	于是$$
+		I_n=n\sum_{k=1}^n{\int_{\frac{k-1}{n}}^{\frac{k}{n}}{f'\left( \xi _k\left( x \right) \right) \left( \frac{k}{n}-x \right)}dx}
+	$$再由积分中中值定理$
+		\exists \eta _k\in \left( \frac{k-1}{n},\frac{k}{n} \right)
+	$使得
+	$$
+		I_n=n\sum_{k=1}^n{f'\left( \eta _k\left( x \right) \right) \frac{1}{2n^2}}=\frac{1}{2}\sum_{k=1}^n{f'\left( \eta _k\left( x \right) \right) \frac{1}{n}}
+	$$
+	最后,由定积分定义可得
+	$$
+		\lim_{n\rightarrow \infty}I_n=\frac{1}{2}\int_0^1{f'\left( x \right) dx}=\frac{f\left( 1 \right) -f\left( 0 \right)}{2}
+	$$
+\end{proof}
+
+\begin{example}
+	设$
+		A_n=\frac{1}{n+1}+\frac{1}{n+2}+\cdots +\frac{1}{n+n}
+	$,证明:$
+		\lim\limits_{n\rightarrow \infty}n\left( \ln 2-A_n \right) =\frac{1}{4}
+	$
+	\vspace{7cm}
+\end{example}
